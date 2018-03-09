@@ -1,0 +1,36 @@
+@mainColor: #39414A;
+
+.tab_content {
+  h3 {
+    height: 30px;
+    background: #F1F5F9;
+    padding: 0 15px;
+    font: bold 11px/30px '微软雅黑';
+    color: @mainColor;
+  }
+  .parent_list {
+    .child_list {
+      height: 30px;
+      padding: 0 15px;
+      background: #ffffff;
+      &:nth-of-type(1) {
+        padding-top: 15px;
+      }
+      &:nth-last-of-type(1) {
+        padding-bottom: 15px;
+      }
+      span {
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+        color: #7F8D9C;
+      }
+    }
+  }
+  .otherInfo {
+    padding: 15px;
+    background: #ffffff;
+    color: #7F8D9C;
+    font: 400 14px/20px '微软雅黑';
+  }
+}

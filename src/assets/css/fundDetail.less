@@ -1,0 +1,94 @@
+@mainColor: #39414A;
+.fund_detail {
+  padding-bottom: 45px;
+}
+
+.top_image {
+  position: relative;
+  height: 180px;
+  background: url("../image/product_introduct_bg.png") no-repeat;
+  .top_icon {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .info_row {
+    padding-top: 30px;
+    .info_col {
+      text-align: center;
+      font: 400 14px/14px '微软雅黑';
+      color: #ffffff;
+    }
+  }
+  .number_row {
+    padding-top: 8px;
+    .number_col {
+      padding-top: 8px;
+      text-align: center;
+      font: 400 30px/30px '微软雅黑';
+      color: #ffffff;
+      &:first-child {
+        border-right: 1px solid darken(#E7EBEF, 10%);
+      }
+      i {
+        font-size: 20px;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: 35px;
+  .more_info {
+    height: 45px;
+    background: #ffffff;
+    color: @mainColor;
+    font: bold 14px/45px '微软雅黑';
+    padding: 0 15px;
+    position: relative;
+    border-bottom: 1px solid #E7EBEF;
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #E7EBEF;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 20px;
+      background: url("../image/action_arrow_right.png") no-repeat;
+      background-size: 10px 20px;
+      position: absolute;
+      top: 12px;
+      right: 15px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 45px;
+  button {
+    border: none;
+    width: 50%;
+    text-align: center;
+    color: #ffffff;
+    font: normal 16px/45px '微软雅黑';
+    &:first-child {
+      background: #f2f2f2;
+      color: @mainColor;
+    }
+    &:nth-of-type(2){
+      background: #1995FB;
+    }
+  }
+}
+

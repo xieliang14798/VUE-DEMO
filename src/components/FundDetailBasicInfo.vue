@@ -1,0 +1,64 @@
+<template>
+  <div class="tab_content">
+    <ul>
+      <li v-for="(item,index) in basicList"
+          :key="index"
+          class="parent_list">
+        <ul>
+          <h3>{{item.title}}</h3>
+          <li v-for="(child,i) in item.childList"
+              :key="i"
+              class="child_list">
+            <span class="fl">{{child.name}}</span>
+            <span class="fr">{{child.value}}</span>
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+    <h3>备注</h3>
+    <p class="otherInfo">{{otherInfo}}</p>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        basicList: [
+          {
+            title: '基本信息',
+            childList: [
+              {name: '折算系数', value: '1.21'},
+              {name: '提成比例', value: '15%'},
+              {name: '投资领域', value: '私募基金'},
+              {name: '收益类型', value: '稳定性'},
+              {name: '产品分类', value: '食品饮料'},
+              {name: '是否结构化', value: '是'},
+              {name: '币种类型', value: '人民币'},
+              {name: '产品总额', value: '75.36亿'},
+              {name: '募集结束日期', value: '2018-05-16'},
+              {name: '募集开始日期', value: '2018-03-16'},
+              {name: '机构追加认购', value: '1000万'},
+              {name: '机构最低认购', value: '100万'},
+              {name: '个人追加申购', value: '10万'},
+              {name: '个人最低认购', value: '5万'},
+              {name: '管理人', value: '苏雪'}
+            ]
+          },
+          {
+            title: '费用说明',
+            childList: [
+              {name: '认购费', value: '0.12%'},
+              {name: '申购费', value: '0.15%'},
+              {name: '赎回费', value: '0.5%'}
+            ]
+          }
+        ],
+        otherInfo: '募集金额超过75亿时将立即停止申购，产品进入封闭期，最长3个月内不能交易。'
+      }
+    }
+  }
+</script>
+<style scoped lang="less">
+  @import "../assets/css/detailBasicInfo.less";
+</style>

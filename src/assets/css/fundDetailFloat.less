@@ -1,0 +1,78 @@
+.float_window {
+  height: 75px;
+  width: 94%;
+  background: #ffffff;
+  box-shadow: 0 3px 20px #A3CEF6;
+  position: absolute;
+  left: 3%;
+  bottom: -15px;
+  border-radius: 4px;
+  .top {
+    padding: 10px 16px 0;
+    .top_info_left {
+      float: left;
+      .alarm_icon {
+        float: left;
+        width: 16px;
+        height: 16px;
+        display: block;
+        background: url("../image/alarm.png") no-repeat;
+        background-size: 16px 16px;
+      }
+      .alarm_name {
+        float: left;
+        color: #7F8D9C;
+        font: normal 12px/12px '微软雅黑';
+        margin-left: 5px;
+        margin-top: 3px;
+      }
+    }
+    .top_info_right {
+      float: right;
+      .level_icon {
+        float: right;
+        width: 40px;
+        height: 15px;
+        display: block;
+        background: url("../image/high_risk.png") no-repeat;
+        background-size: 40px 15px;
+      }
+      .min_money {
+        float: right;
+        color: #7F8D9C;
+        font: normal 12px/12px '微软雅黑';
+        margin-right: 10px;
+        margin-top: 3px;
+      }
+    }
+
+  }
+  .middle {
+    padding: 15px 16px 0;
+    .sk_time {
+      float: left;
+      .num {
+        display: block;
+        float: left;
+        color: #39414A;
+        margin-left: 3px;
+        font: bold 20px/20px '微软雅黑';
+      }
+      .str {
+        display: block;
+        float: left;
+        color: #39414A;
+        margin-left: 3px;
+        font: bold 10px/10px '微软雅黑';
+        margin-top: 10px;
+      }
+    }
+    .remain_balance{
+      float: right;
+      color: #39414A;
+      font: normal 14px/14px '微软雅黑';
+      margin-top: 5px;
+    }
+  }
+
+}
