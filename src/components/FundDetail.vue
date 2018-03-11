@@ -5,12 +5,12 @@
         <div class="top_image">
           <img src="../assets/image/introduct_stock_right.png" class="top_icon">
           <van-row class="info_row">
-            <van-col span="12" class="info_col">预期年化</van-col>
-            <van-col span="12" class="info_col">产品期限</van-col>
+            <van-col span="12" class="info_col">{{data.title_left}}</van-col>
+            <van-col span="12" class="info_col">{{data.title_right}}</van-col>
           </van-row>
           <van-row class="number_row">
-            <van-col span="12" class="number_col">5.2<i>%</i></van-col>
-            <van-col span="12" class="number_col">4个月</van-col>
+            <van-col span="12" class="number_col">{{data.value_left}}<i v-show="data.value_left">%</i></van-col>
+            <van-col span="12" class="number_col">{{data.value_right}}</van-col>
           </van-row>
           <float></float>
         </div>
@@ -46,9 +46,9 @@
   import Float from './FundDetailFloat.vue'
   import Basic from './FundDetailBasicInfo.vue'
   import News from './FundDetailNews.vue'
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
-    name: 'HelloWorld',
     data() {
       return {
         isLoading: false
@@ -60,19 +60,29 @@
       News
     },
     mounted() {
+      this.setLoadingShow(true);
       this.fetchData();
     },
+    computed:{
+      ...mapGetters({
+        data:'fundDetail'
+      })
+    },
     methods: {
+      ...mapActions(['setFundDetailData','setLoadingShow']),
       onRefresh() {
         setTimeout(() => {
           this.isLoading = false;
         }, 1000);
       },
       fetchData() {
-        var _this = this;
-        this.$http.get('static/data/index.data').then(function (res) {
-          console.log(res.data);
-        }).catch(function (err) {
+        this.$http.get('static/data/fundDetail.json').then(function (res) {
+          //将产品详情的数据存储到store中
+          setTimeout(function () {
+            this.setFundDetailData(res.data);
+            this.setLoadingShow(false);
+          }.bind(this),2000);
+        }.bind(this)).catch(function (err) {
           console.log(err);
         });
       }

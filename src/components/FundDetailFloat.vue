@@ -7,7 +7,7 @@
       </div>
       <div class="top_info_right">
         <span class="level_icon"></span>
-        <h4 class="min_money">5万起投</h4>
+        <h4 class="min_money">{{data.min_first_balance}}</h4>
       </div>
     </div>
     <div class="middle clearfix">
@@ -21,11 +21,12 @@
         <span class="num">{{second | FormatTime}}</span>
         <span class="str">秒</span>
       </div>
-      <span class="remain_balance">剩余800万元</span>
+      <span class="remain_balance">{{data.remaining_amount}}</span>
     </div>
   </div>
 </template>
 <script>
+  import {mapGetters,mapActions} from 'vuex'
   export default {
     data() {
       return {
@@ -37,6 +38,11 @@
     },
     created() {
       this.countdown();
+    },
+    computed:{
+      ...mapGetters({
+        data:'fundFloat'
+      })
     },
     methods: {
       countdown() {

@@ -6,6 +6,11 @@ import router from './router'
 import {Row, Col, Tab, Tabs, PullRefresh, Loading} from 'vant';
 import filters from './filters'
 import axios from 'axios'
+//vuex
+import store from './store'
+import loading from './components/loading'
+
+Vue.use(loading);
 
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 
@@ -18,6 +23,7 @@ Vue.prototype.$http = axios;
 new Vue({
   el: '#app',
   router,
+  store,
   components: {App},
   template: '<App/>'
 })
