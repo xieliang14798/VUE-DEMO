@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Row, Col, Tab, Tabs, PullRefresh, Loading} from 'vant';
+import {Row, Col, Tab, Tabs, PullRefresh, Loading,Button} from 'vant';
 import filters from './filters'
 import axios from 'axios'
 //vuex
@@ -14,7 +14,7 @@ Vue.use(loading);
 
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 
-Vue.use(Row).use(Col).use(Tab).use(Tabs).use(PullRefresh).use(Loading);
+Vue.use(Row).use(Col).use(Tab).use(Tabs).use(PullRefresh).use(Loading).use(Button);
 
 Vue.config.productionTip = false// 阻止 vue 在启动时生成生产提示
 
